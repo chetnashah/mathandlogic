@@ -1,8 +1,10 @@
 
 \documentclass{article}
+\usepackage[euler-digits]{eulervm}
 \usepackage{lipsum}
 \usepackage{mathtools,amsthm,amssymb}
-%this is a comment, all comments start with %
+\usepackage[normalem]{ulem}
+% this is a comment, all comments start with %
 \begin{document}
 Heoolo world!
 
@@ -130,5 +132,28 @@ If f is injective, it is $f: A \rightarrowtail B$
 If f is surjective, it is $f: A \twoheadrightarrow B$
 
 if f is a bijection it is $f: A \leftrightarrow B$
+
+Failing powers of factorial is $x^{\uline{m}}$
+
+Formula for exponent of a prime p in (n!)'s unique factorization:
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+% floor* will have vertical resizable floor delemiters
+$\epsilon_p(n!) = \floor*{\dfrac{n}{p}} + \floor*{\dfrac{n}{p^2}} +\floor*{\dfrac{n}{p^3}}
++ \hdots = \sum\limits_{k\geq1} \floor*{\dfrac{n}{p^k}} $
+
+
+\newcommand{\fallingfactorial}[1]{%
+  ^{\underline{#1}}%
+}
+
+
+Failing powers of factorial is $x^{\uline{m}}$
+\[
+x\fallingfactorial{n}={\overbrace{x(x-1)\dots(x-n+1)}^{\text{$n$ factors}}}
+\]
+
 
 \end{document}
