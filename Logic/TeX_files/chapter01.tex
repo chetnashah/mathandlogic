@@ -1,0 +1,127 @@
+\chapter{Common concepts}
+
+
+
+
+\section{Propositions}
+
+\begin{definition}[Proposition]
+	A proposition is a statement that is either true or false (and usuallly has a variable).
+\end{definition}
+
+\begin{definition}[Compound Proposition]
+	Compound propositions: Combine multiple propositions using and/or/not/implies
+\end{definition}
+
+
+\begin{definition}[Predicate]
+	A predicate is a proposition whose truth value dedpends on one or more variables.
+\end{definition}
+
+For e.g.
+	"n is a perfect square"
+	P(n) ::= "n is a perfect square"
+	P(4) is true, P(5) is false
+	
+\begin{definition}[Quantifier]
+A quantifier is an operator that specifies how many individuals in the domain of discourse satisfy an open formula. ($\forall$ or $\exists$)
+\end{definition}
+
+For instance, the universal quantifier $\forall$  in the first order formula ${ \forall xP(x)}$ expresses that everything in the domain satisfies the property denoted by $P$. On the other hand, the existential quantifier ${ \exists }$ in the formula ${ \exists xP(x)}$ expresses that there is something in the domain which satisfies that property
+
+\begin{lemma}[Negating Quantifiers]
+	Universal negation: 
+	\begin{center}
+	$ \neg (\forall x \in D, P(x)) \equiv \exists x \in D, \neg P(x). $
+	\end{center}
+
+	Existential negation:
+	\begin{center}
+	$ \neg{(\exists x \in X, P(x))} \equiv \forall x \in D, \neg P(x). $
+	\end{center}
+\end{lemma}
+
+\begin{lemma}[Order of mixed quantifiers]
+	When multiple quantifiers are of the same type, e.g. all $\forall$ or all $\exists$, then it is ok.
+	\begin{center}
+		$ \forall x \forall y . Likes(x,y) \equiv \forall y \forall x . Likes(x,y) $
+	\end{center}
+	
+	
+	But if quantifiers are of different type,
+	then they do not mean the same
+	\begin{center}
+		$\forall x \exists y . Likes(x,y) \ne \exists y \forall x .Likes(x, y)$
+	\end{center}
+
+\end{lemma}
+
+\begin{definition}[Validity]
+	A propositional formula is called valid when it evaluates to $T$ no matter what truth
+	values are assigned to the individual propositional variables.
+\end{definition}
+
+\begin{definition}[Satisfiability]
+A proposition is satisfiable if some setting of the variables makes the proposition
+true
+\end{definition}
+
+
+E.g.
+e, P $\land$ $\neg$Q is satisfiable because the expression is true if P is true
+or Q is false.
+
+\section{Induction}
+
+\begin{definition}[Well Ordering principle]
+	Every nonempty set of nonnegative integers has a smallest element.	
+\end{definition}
+
+
+\begin{definition}[Induction]
+	Let P(n) be a predicate. 
+	If
+	\begin{itemize}
+		\item P (0) is true, and
+		\item P (n) IMPLIES P(n + 1) for all nonnegative integers, n,  
+	\end{itemize}
+	then
+	\begin{itemize}
+		\item P (m) is true for all nonnegative integers, m.
+	\end{itemize}
+
+In other words:
+\infer{\forall m \in \mathbb{N}. P(m)}{%
+	P(0)
+	& \forall n \in \mathbb{N}. P(n) \implies P(n+1)
+}
+	
+\end{definition}
+
+\begin{definition}[Invariant]
+	A property that is preserved through a series of operations or steps is known as an
+	invariant
+\end{definition}
+
+
+\begin{lemma}[Invariant method]
+	If you would like to prove that some property NICE holds for every
+	step of a process, then it is often helpful to use the following method:
+	\begin{itemize}
+		\item Define $P(t)$ to be the predicate that NICE holds immediately after step t.
+		\item Show that $P(0)$ is true, namely that NICE holds for the start state.	
+		\item Show that
+		$\forall t \in \mathbb{N}. P(t) \implies P(t + 1)$;
+		namely, that for any $t \ge 0$, if NICE holds immediately after step t, it must
+		also hold after the following s
+	\end{itemize}
+\end{lemma}
+
+\begin{definition}[Strong Induction]
+	Let P(n) be a predicate
+	\begin{itemize}
+		\item $P(0)$ is true and 
+		\item $P(1), P(2), ... P(n)$ together imply $P(n+1)$ 
+	\end{itemize}
+	then $P(n)$ is true for all $n \in \mathbb{N}$
+\end{definition}
