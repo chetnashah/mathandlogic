@@ -1,0 +1,41 @@
+\chapter{Fundamental theorem on Numbers}
+\newcommand{\Mod}[1]{\ \mathrm{mod}\ #1}
+
+	\begin{section}{Division of numbers}
+		Given any two integers $a, d \in \mathbb{N}$, 
+		\begin{equation}
+			a = d*\left\lfloor\frac{a}{d}\right\rfloor + a \Mod d
+		\end{equation}
+	Here the quotient is $q = \left\lfloor\frac{a}{d}\right\rfloor$ and remainder is $r = a \Mod d$
+	\end{section}
+
+	\begin{section}{Floor \& Ceiling functions}
+		\begin{equation}
+			\begin{aligned}
+				\left\lfloor{x}\right\rfloor = greatest\: integer\: less\: than\: or\: equal\: to\: x \\
+				\left\lceil{x}\right\rceil = smallest\: integer\: greater\: than\: or\: equal\: to\: x \\
+			\end{aligned}
+		\end{equation}
+	\end{section}
+
+	\begin{section}{Floor and Ceiling inequalities}
+		\begin{equation}
+			\boxed{ x-1 < \lfloor{x}\rfloor \leq x \leq \lceil{x}\rceil < x+1}
+		\end{equation}
+
+		When $x \in \mathbb{N}$,
+		following equation holds:
+		\begin{equation}
+			\boxed{\lceil{x}\rceil = \lfloor{x}\rfloor = x}
+		\end{equation}
+	
+		Integers can move in and out of floors and ceilings,
+		i.e. $n \in \mathbb{N}$
+		\begin{equation}
+			\begin{aligned}
+			\lfloor{x + n}\rfloor = \lfloor{x}\rfloor + n \\
+			\lceil{x + n}\rceil = \lceil{x}\rceil + n
+			\end{aligned}
+		\end{equation}
+	
+	\end{section}
